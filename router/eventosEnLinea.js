@@ -8,4 +8,5 @@ router.delete("/eliminar/:id",EventosEnLineaa.eliminarEvento);
 router.put("/actualizar/:id",EventosEnLineaa.actualizarEvento);
 router.post("/cancelar", EventosEnLineaa.cancelarInscripcion);
 router.post("/inscripcion", EventosEnLineaa.inscribirUsuario);
+router.get("/informe", EventosEnLineaa.generarInforme);
 module.exports = router;

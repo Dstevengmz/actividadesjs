@@ -79,8 +79,6 @@ static async generarInforme(req, res) {
     }
 }
 
-
-
 }
 
 
