@@ -6,7 +6,6 @@ router.get("/mensaje",);
 router.post("/insertar",EventosEnLineaa.insetarEventos);
 router.delete("/eliminar/:id",EventosEnLineaa.eliminarEvento);
 router.put("/actualizar/:id",EventosEnLineaa.actualizarEvento);
-router.get("buscar",);
-
-
+router.post("/cancelar", EventosEnLineaa.cancelarInscripcion);
+router.post("/inscripcion", EventosEnLineaa.inscribirUsuario);
 module.exports = router;
