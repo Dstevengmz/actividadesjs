@@ -60,6 +60,25 @@ static async cancelarInscripcion(req, res)
         console.log("error")
     }
 }
+static async eliminarEvento(req, res) {
+    let { id } = req.params;
+    try {
+        await db.query("delete from eventos where id = ?", [id]);
+        alert("Evento ha sido eliminado");
+    } catch (error) {
+        console.log("error");
+    }
+}
+
+static async generarInforme(req, res) {
+    try {
+        const [informes] = await db.execute("select nombre, count(inscripciones.id) as numerodeincripcionbes from eventos left join inscripciones on eventos.id = inscripciones.evento_id GROUP BY eventos.id ORDER BY numerodeincripcionbes DESC");
+        res.json(informes);
+    } catch (error) {
+        console.log("error");
+    }
+}
+
 
 
 }
